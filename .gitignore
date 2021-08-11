@@ -18,3 +18,5 @@ gin_app
 # Terraform
 *.terraform*
 *terraform.tfstate*
+
+.env

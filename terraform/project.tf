@@ -37,7 +37,7 @@ resource "google_project_iam_binding" "service_permissions" {
 }
 
 locals {
-  service_name   = "gin-app"
+  service_name   = "glucose-api"
   deployment_name = "github_deploy"
   github_deploy_sa  = "serviceAccount:${google_service_account.github_deploy.email}"
 }

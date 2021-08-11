@@ -1,20 +1,25 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"leozz37/glucose-measure-api/handlers"
+	"os"
+
+	"github.com/gin-gonic/gin"
+)
 
 func InitRoutes() {
 	router := gin.Default()
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	router.GET("/glucose", handlers.GetGlucose)
 	router.NoRoute(noRoute)
 
-	router.Run()
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	router.Run(":" + port)
 }
 
 func noRoute(c *gin.Context) {
-	c.JSON(404, gin.H{"message": "Page not found"})
+	c.JSON(404, gin.H{"status": 404, "message": "Page not found"})
 }
