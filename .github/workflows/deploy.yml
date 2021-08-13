@@ -29,10 +29,10 @@ jobs:
         run: gcloud builds submit
 
       - name: Deploy to Cloud Run
-        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $(DOCKER_IMAGE) \
+        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image ${DOCKER_IMAGE} \
           --region us-central1 --platform managed \
-          --allow-unauthenticated --port $(PORT) \
-          --set-env-vars='FILE_NAME=$(FILE_NAME)' \
+          --allow-unauthenticated --port ${PORT} \
+          --set-env-vars='FILE_NAME=${FILE_NAME}' \
           --set-env-vars='FILE_DOWNLOAD_URL=${{ secrets.FILE_DOWNLOAD_URL }}' \
           --set-env-vars='INFLUXDB_TOKEN=${{ secrets.INFLUXDB_TOKEN }}' \
           --set-env-vars='INFLUXDB_BUCKET=${{ secrets.INFLUXDB_BUCKET }}' \
