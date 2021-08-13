@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "glucose-api",
+  "private_key_id": "ff4a06ee89ea97f219fb47309bf4c263ed7f966d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCWE1c0bvKmwpvD\nMcuDdl/QX7tQYVQnoC2pOwM4TwXy+YEca5W3k+2CJCZe97j/lvjrJ7bj8NAw9IpX\nkGTPfZo97YBIan3IOBhaEgj/rNrWKTedYM3cDSZd20ELq3gVs9IeifwVCYn6qIuW\natnLw5RRrq3jWhNyNIFDOQspefgiDDd0UtfVamJraVf704+nbgjEevghIlg29DSO\n/+FKnjDZZBeUrtRe+Ph/mmHjVhxViGP8/mqeVuSZZQCypP5AIudKTyoXc6I67QVy\ndIpTrlv4k2rVTBax+t2GAtghVJdhWKS3u0braSszF9iXlG67/v4ndvGCNtuRe1KX\nr8G8AZNJAgMBAAECggEAE0WojTMyNfgHyKk8WUV6SGgCxe+5vtzzAChz4WdEfE9O\nJTgrocd9WJkL1GY7e5cHoCsZcWwbUC4XFeeVCpA2nn1BXAtQ28VYWzi1rx+jep0Q\nZ0VnKjsGEkd1sunyIddVxFYz6P+wmF/MjSRrk58qDNNBwVBv7tqPPvK0XD8tfjGh\nB6SfislM/Zs+ikq3mZe6bca9k+mAdYSIDLfsQLtghzQc2C+t7wAhu5kgijlCChRM\nlk/F06cZ6lhTb8YC5EO9TvD7ksGQ/1YPfxVgJFU0CqvAf+ZQLb9HjJUvJPvrXe7C\nX7sZ5zIYUlET/uBs/0pquWpRtCkxxnskaIXTIPtxgQKBgQDNcE+b7nzPaccPt7gf\ndUsZVrrMDHPlAl2USMbFea1PFFfULs/JrGKL8YOd8MwFrugJ/KkCjkCwhW5wVPXS\nmztETGwNhT4as514M2MO1iqT/qO4yK1VMF77nFz5426nctL+c4Ny0LXs9Rwaq/dE\n+6eNKx0TrhbcqB1mWjOcF2SdhwKBgQC7At4G3t85PrTkz/4t3+fsV1PH/CGpvqg4\nkiXa0qfW++cmy7IUeLrnVNDMmx+d2YlGNfr/znoMnKfJjJsikjV1pdkO1Hx45nzZ\ngCMG4CaReHuF5IEQtqzBbiCk/VF8STm3WLxnA/KHHJo2InnClMzqisxjOnxJYqWf\nOzoW1c/8rwKBgQCW95GI5RiS0wiVZEzJ0Uf+tt1OVVhVUgeykEiBlYjmM+zW4A+S\nBDvm2vP9fJZxFrctn54TYrXnAibGJaj/u1MyPXap+OBKfvOZASoqHPftCZMGl3HI\nyGMEQ0OP3rHSG28xzXErTnRiTTz53KU47DWUZ7pWW/gw7tmr/V0vt4EYwQKBgQCL\nC965jQy8K3ukhWGgClMOzv9kOnttEm1RYpjy0p4oorODjQCjaADP76gv+UbQvuXq\nZkhx2ru0lOXMXdcbJUrKZr204RiLbBR4Q2XHvvHuR37QVs3/91MLny52fkMP/gID\n6N5sWesBuqqOhaOyoaCa4wiE3v96MPakJg1S3Tb/0QKBgQCIjNvzPkG2PTTZQho5\nKhwcEalAYGU6GPw7lCnjnU98xta150MIXwTyk2b78IlKe8G1SDMLu77kuOo/1lZB\nKRxgPPk6PqdWwrfYQh00uhQ5LQ9SZX4TYhn9qRPB983mJHxsd4JE3DsqmyZZZZwr\nUXyfKkeZCga7n4+WoZPLoGVSMQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "glucose-account@glucose-api.iam.gserviceaccount.com",
+  "client_id": "104659790716242015522",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/glucose-account%40glucose-api.iam.gserviceaccount.com"
+}
