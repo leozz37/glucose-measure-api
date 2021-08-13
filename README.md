@@ -8,6 +8,7 @@
 [![Unit Tests](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/unit_tests.yml)
 [![Docker](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/docker.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/docker.yml)
 [![Terraform](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/terraform.yml)
+[![Deploy](https://github.com/leozz37/glucose-measure-api/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/leozz37/glucose-measure-api/actions/workflows/deploy.yml)
 
 - [Quick Start](#quick-start)
 - [Building](#building)
