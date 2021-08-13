@@ -29,7 +29,8 @@ jobs:
         run: gcloud builds submit
 
       - name: Deploy to Cloud Run
-        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image ${DOCKER_IMAGE} \
+        run: |
+          gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image ${DOCKER_IMAGE} \
           --region us-central1 --platform managed \
           --allow-unauthenticated --port ${PORT} \
           --set-env-vars='FILE_NAME=${FILE_NAME}' \
