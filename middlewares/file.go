@@ -2,7 +2,6 @@ package middlewares
 
 import (
 	"compress/gzip"
-	"encoding/csv"
 	"fmt"
 	"io"
 	"net/http"
@@ -58,22 +57,4 @@ func UnzipFile(fileName string) {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-}
-
-func GetLastMeasureFromCSV(fileName string) (string, error) {
-	f, err := os.Open(fileName)
-	if err != nil {
-		return "", err
-	}
-	defer f.Close()
-
-	r := csv.NewReader(f)
-	row, err := r.ReadAll()
-	if err != nil {
-		return "", err
-	}
-
-	glucoseLevel := strings.Split(row[0][0], ";")[6]
-	glucoseLevel = strings.Replace(glucoseLevel, "\u0000", "", -1)
-	return glucoseLevel, nil
 }

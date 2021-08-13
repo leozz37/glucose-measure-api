@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy:
+      name: Deploy
+      runs-on: ubuntu-latest
+      env:
+        DOCKER_IMAGE: gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_PROJECT_ID }}
+        PORT: 8080
+        FILE_NAME: GlicemiaMisurazioni.csv
+      steps:
+      - name: Google Cloud Login
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_email: ${{ secrets.GCP_EMAIL }}
+          service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build and deploy contaner to GCP
+        run: gcloud builds submit
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $(DOCKER_IMAGE) \
+          --region us-central1 --platform managed \
+          --allow-unauthenticated --port $(PORT) \
+          --set-env-vars='FILE_NAME=$(FILE_NAME)' \
+          --set-env-vars='FILE_DOWNLOAD_URL=${{ secrets.FILE_DOWNLOAD_URL }}' \
+          --set-env-vars='INFLUXDB_TOKEN=${{ secrets.INFLUXDB_TOKEN }}' \
+          --set-env-vars='INFLUXDB_BUCKET=${{ secrets.INFLUXDB_BUCKET }}' \
+          --set-env-vars='INFLUXDB_ORG=${{ secrets.INFLUXDB_ORG }}' \
+          --set-env-vars='INFLUXDB_URL=${{ secrets.INFLUXDB_URL }}'

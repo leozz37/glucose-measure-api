@@ -20,3 +20,5 @@ gin_app
 *terraform.tfstate*
 
 .env
+*GlicemiaMisurazioni.csv
+*GlicemiaMisurazioni.csv.gz
