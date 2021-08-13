@@ -15,18 +15,15 @@ jobs:
         PORT: 8080
         FILE_NAME: GlicemiaMisurazioni.csv
       steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Google Cloud Login
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_email: ${{ secrets.GCP_EMAIL }}
           service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-
-      - name: Configure Docker
-        run: gcloud auth configure-docker --quiet
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
 
       - name: Build and deploy contaner to GCP
         run: gcloud builds submit
