@@ -19,6 +19,11 @@ gin_app
 *.terraform*
 *terraform.tfstate*
 
+# Local Files
 .env
 *GlicemiaMisurazioni.csv
 *GlicemiaMisurazioni.csv.gz
+
+# Binaries
+*glucose
+*glucose-api
