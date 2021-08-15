@@ -7,9 +7,9 @@ import (
 )
 
 type Measure struct {
-	GlucoseLevel string
-	Date         string
-	Status       int
+	GlucoseLast        string
+	GlucosePenultimate string
+	Status             int
 }
 
 func GetLastMeasureFromCSV(fileName string) (Measure, error) {
@@ -20,18 +20,14 @@ func GetLastMeasureFromCSV(fileName string) (Measure, error) {
 	defer f.Close()
 
 	r := csv.NewReader(f)
-	row, err := r.ReadAll()
-	if err != nil {
-		return Measure{}, err
-	}
+	record, _ := r.Read()
+	glucoseLast := strings.Split(string(record[0]), ";")[6]
+	glucoseLast = strings.Replace(glucoseLast, "\u0000", "", -1)
 
-	glucoseLevel := strings.Split(row[0][0], ";")[6]
-	glucoseLevel = strings.Replace(glucoseLevel, "\u0000", "", -1)
+	record, _ = r.Read()
+	glucosePenultimate := strings.Split(string(record[0]), ";")[6]
+	glucosePenultimate = strings.Replace(glucosePenultimate, "\u0000", "", -1)
 
-	measureDate := strings.Split(row[0][0], ";")[1]
-	measureDate = strings.Replace(measureDate, "\u0000", "", -1)
-	measureDate = strings.Replace(measureDate, ".", ":", -1)
-
-	measure := Measure{GlucoseLevel: glucoseLevel, Date: measureDate}
+	measure := Measure{GlucoseLast: glucoseLast, GlucosePenultimate: glucosePenultimate}
 	return measure, nil
 }

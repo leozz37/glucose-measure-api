@@ -9,7 +9,7 @@ import (
 	influxdb2 "github.com/influxdata/influxdb-client-go/v2"
 )
 
-func Save(glucoseLevel, measureDate string) {
+func Save(glucoseLevel string) {
 	token := os.Getenv("INFLUXDB_TOKEN")
 	bucket := os.Getenv("INFLUXDB_BUCKET")
 	org := os.Getenv("INFLUXDB_ORG")

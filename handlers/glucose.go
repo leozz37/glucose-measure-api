@@ -3,7 +3,6 @@ package handlers
 import (
 	"leozz37/glucose-measure-api/middlewares"
 	"leozz37/glucose-measure-api/models"
-	"leozz37/glucose-measure-api/services/db"
 	"net/http"
 	"os"
 
@@ -24,7 +23,6 @@ func GetGlucose(c *gin.Context) {
 		c.JSON(500, gin.H{"status": 500, "message": "Can't get glucose level from CSV"})
 	}
 
-	db.Save(measure.GlucoseLevel, measure.Date)
 	measure.Status = http.StatusOK
 	c.JSON(measure.Status, measure)
 }
